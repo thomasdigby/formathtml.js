@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>HTML formatting test</title>
+</head>
+
+<body>
+
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 6</h6>
+
+	<p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+
+	<hr />
+
+	<p><img alt="Placeholder Image and Some Alt Text" src="http://placehold.it/350x150" title="A title element for this placeholder image.">
+	</p>
+
+	<blockquote>
+		"<strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
+	</blockquote>
+
+	<figure>
+		<img src="http://placehold.it/350x150" alt="A placeholder figure image." />
+		<figcaption>The figcaption element example</figcaption>
+	</figure>
+
+	<details>
+		<summary>The summary element example</summary>
+		<p>The details example text. It may be styled differently based on what browser or operating system you are using.</p>
+	</details>
+
+	<hr />
+
+	<p>The
+		<mark>mark element</mark> example</p>
+
+	<pre><code>// Loop through Divs using Javascript.
+var divs = document.querySelectorAll('div'), i;
+
+for (i = 0; i < divs.length; ++i) {
+  divs[i].style.color = "green";
+}</code></pre>
+
+	<ol>
+		<li>List Item 1</li>
+		<li>List Item 2</li>
+		<li>List Item 3
+			<ol>
+				<li>List Item 3.1</li>
+				<li>List Item 3.2
+					<ol>
+						<li>List Item 3.2.1</li>
+						<li>List Item 3.2.2</li>
+					</ol>
+				</li>
+				<li>List Item 3.3</li>
+			</ol>
+		</li>
+		<li>List Item 4</li>
+	</ol>
+
+	<ul>
+		<li>List Item 1</li>
+		<li>List Item 2</li>
+		<li>List Item 3
+			<ul>
+				<li>List Item 3.1</li>
+				<li>List Item 3.2
+					<ul>
+						<li>List Item 3.2.1</li>
+						<li>List Item 3.2.2</li>
+					</ul>
+				</li>
+				<li>List Item 3.3</li>
+			</ul>
+		</li>
+		<li>List Item 4</li>
+	</ul>
+
+	<dl>
+		<dt>Definition Term 1</dt>
+		<dd>Definition Description 1</dd>
+		<dt>Definition Term 2</dt>
+		<dd>Definition Description 2</dd>
+	</dl>
+
+	<table cellspacing="0" cellpadding="0">
+		<caption>This is a table caption</caption>
+		<thead>
+			<tr>
+				<th>Table Header 1</th>
+				<th>Table Header 2</th>
+				<th>Table Header 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Division 1</td>
+				<td>Division 2</td>
+				<td>Division 3</td>
+			</tr>
+			<tr class="even">
+				<td>Division 1</td>
+				<td>Division 2</td>
+				<td>Division 3</td>
+			</tr>
+			<tr>
+				<td>Division 1</td>
+				<td>Division 2</td>
+				<td>Division 3</td>
+			</tr>
+			<tr>
+				<td colspan="3">A row with a cell spanning all 3 columns</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Table Footer 1</th>
+				<th>Table Footer 2</th>
+				<th>Table Footer 3</th>
+			</tr>
+		</tfoot>
+	</table>
+
+	<audio controls>
+		<source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" />
+		<source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" /> Your browser does not support the audio element.
+	</audio>
+
+	<video width="320" height="240" controls>
+		<source src="http://www.w3schools.com/tags/movie.mp4" type="video/mp4" />
+		<source src="http://www.w3schools.com/tags/movie.ogg" type="video/ogg" /> Your browser does not support the video tag.
+	</video>
+
+	<fieldset>
+
+		<legend>Legend</legend>
+
+		<form>
+
+				<label for="text_field">Text Field:</label>
+				<br />
+				<input type="text" id="text_field" />
+
+				<label for="select_element">Select Element:</label>
+				<br />
+				<select id="select_element">
+					<optgroup label="Option Group 1">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+					</optgroup>
+					<optgroup label="Option Group 2">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3" disabled>Disabled Option</option>
+					</optgroup>
+				</select>
+
+				<label>
+					<input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1</label>
+				<br/>
+				<label>
+					<input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2</label>
+				<br/>
+				<label>
+					<input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3</label>
+				<br/>
+				<label>
+					<input type="radio" class="radio" name="radio_button" value="radio_4" disabled /> Radio Disabled</label>
+
+				<label>
+					<input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Checkbox 1</label>
+				<br/>
+				<label>
+					<input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Checkbox 2</label>
+				<br/>
+				<label>
+					<input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Checkbox 3</label>
+				<br/>
+				<label>
+					<input type="checkbox" class="checkbox" name="checkboxes" value="check_4" disabled /> Checkbox Disabled</label>
+				<br/>
+
+				<label for="datalist">Datalist:</label>
+				<br />
+				<input list="browsers" name="browser" type="datalist" id="datalist" />
+				<datalist id="browsers">
+					<option value="Internet Explorer" />
+					<option value="Firefox" />
+					<option value="Chrome" />
+					<option value="Opera" />
+					<option value="Safari" />
+				</datalist>
+		</form>
+
+	</fieldset>
+
+	<!-- formatted html output -->
+	<code id="html" style="white-space: pre; tab-size: 4"></code>
+
+	<script src="formathtml.js"></script>
+	<script>
+		document.getElementById('html').innerHTML = formatHtml(document.documentElement.outerHTML);
+	</script>
+
+</body>
+</html>
