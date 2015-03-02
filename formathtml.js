@@ -6,14 +6,12 @@
  */
 function formatHtml (htmlString) {
 
-	var formattedHtml = indentHtml(htmlString);
-
 	function indentHtml (htmlString) {
 
 		// create array from html string
 		var htmlArray = createHtmlArray(htmlString),
-			indentString = '',
-			htmlString = '';
+			indent = '',
+			formattedHtml = '';
 
 		// for each line in array
 		for (var i = 0; i < htmlArray.length; i++) {
@@ -27,21 +25,21 @@ function formatHtml (htmlString) {
 				// test for opening tag, not closing tag, not comment & not self closing tag
 				if (isOpeningTag(prevLine) && !isClosingTag(prevLine) && !isComment(prevLine) && !isSelfClosingTag(prevLine)) {
 					// increment tab indent
-					indentString += '\t';
+					indent += '\t';
 				}
 				// test for closing tag
 				if (isClosingTag(currLine)) {
 					// decrement tab indent
-					indentString = indentString.slice(0, -1);
+					indent = indent.slice(0, -1);
 				}
 			}
 
 			// add formatted output to current output
-			htmlString += indentString + currLine + '\n';
+			formattedHtml += indent + currLine + '\n';
 		}
 
-		return htmlString.trim();
-	};
+		return formattedHtml.trim();
+	}
 
 	// returns html array
 	function createHtmlArray (htmlString) {
@@ -53,6 +51,8 @@ function formatHtml (htmlString) {
 				.replace(/\t/g, '')
 				// remove line break
 				.replace(/\n/g, '')
+				// remove empty attribute properties
+				.replace(/=""/g, '')
 				// remove space between tags
 				.replace(/\&gt;[\s]+\&lt;/g, '&gt;&lt;')
 				// add new line before < if not prepended by > or a line break
@@ -66,7 +66,7 @@ function formatHtml (htmlString) {
 		return htmlArray.filter(function(item){
 			return item !== '';
 		});
-	};
+	}
 
 	// returns escaped string
 	function escapeHtml (htmlString) {
@@ -85,15 +85,15 @@ function formatHtml (htmlString) {
 		return String(htmlString).replace(/[&<>''\/]/g, function(str) {
 			return entityMap[str];
 		});
-	};
+	}
 
 	// helpers
 	function isOpeningTag(string) {
 		return string.substring(0, 4) === '&lt;';
-	};
+	}
 	function isClosingTag(string) {
 		return string.substring(4, 10) === '&#x2F;';
-	};
+	}
 	function isSelfClosingTag(string) {
 
 		// set reference to self closing tag
@@ -113,11 +113,11 @@ function formatHtml (htmlString) {
 		}
 
 		return isSelfClosing;
-	};
+	}
 	function isComment(string) {
-		return string.substring(0, 7) === '&lt;!--'
-	};
+		return string.substring(0, 7) === '&lt;!--';
+	}
 
 	// return final formatted html string
-	return formattedHtml;
-};
+	return indentHtml(htmlString);
+}
