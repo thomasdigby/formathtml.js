@@ -1,5 +1,10 @@
 
-var formatHtml = function (htmlString) {
+/*
+ * FormatHTML: JS utility to format HTML
+ * @thomasdigby
+ * Licensed MIT
+ */
+function formatHtml (htmlString) {
 
 	var formattedHtml = indentHtml(htmlString);
 
@@ -98,8 +103,10 @@ var formatHtml = function (htmlString) {
 		// test if current line contains a self closing tag
 		for (var i = 0; i < selfClosingTags.length; i++) {
 
+			var selfClosing = new RegExp('&lt;' + '\\b' + selfClosingTags[i] + '\\b');
+
 			// if line contains self closing tag, break loop
-			if (string.match(regexWholeWord(selfClosingTags[i]))) {
+			if (string.match(selfClosing)) {
 				isSelfClosing = true;
 				break;
 			}
@@ -110,11 +117,6 @@ var formatHtml = function (htmlString) {
 	function isComment(string) {
 		return string.substring(0, 7) === '&lt;!--'
 	};
-
-	// return whole word regex
-	function regexWholeWord(string) {
-		return new RegExp('&lt;' + '\\b' + string + '\\b');
-	}
 
 	// return final formatted html string
 	return formattedHtml;
