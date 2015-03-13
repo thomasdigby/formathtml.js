@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -207,7 +207,7 @@ for (i = 0; i < divs.length; ++i) {
 
 	<script src="dist/formathtml.min.js"></script>
 	<script>
-		document.getElementById('html').innerHTML = formatHtml(document.documentElement.outerHTML);
+		document.getElementById('html').innerHTML = formatHtml(document.documentElement.outerHTML, {indentCharacter: ' ', indentCharacterCount: 4});
 	</script>
 
 </body>

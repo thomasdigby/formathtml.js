@@ -3,19 +3,30 @@
 Pass through a string to return formatted html, currently returns tab-indented and will add a line break for each new tag.
 
 ```javascript
-formatHtml('<div><h2>Title</h2></div>');
+var options = {
+	indentCharacter: ' ',
+	indentCharacterCount: 2
+};
+formatHtml('<div><h2>Title</h2></div>', options);
 ```
 Returns:
 ```html
 <div>
-	<h2>
-		Title
-	</h2>
+  <h2>
+    Title
+  </h2>
 </div>
 ```
-
+## Options
+### indentCharacter
+Default is `\t`, requires a `string`
+### indentCharacterCount
+Default is `1`, requires a `integer`
 
 ___
-#####TO DO
-* Add option for space indentation
+## Releases
+* `v1.0.1` Added indent character configuration
+* `v1.0.0` Initial release
+
+### TO DO
 * Add option for non-breaking tags, `<a>`, `<abbr>`, `<mark>` etc.
