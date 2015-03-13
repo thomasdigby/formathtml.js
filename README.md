@@ -25,6 +25,7 @@ Default is `1`, requires a `integer`
 
 ___
 ## Releases
+* `v1.0.2` Fixed indentation issue
 * `v1.0.1` Added indent character configuration
 * `v1.0.0` Initial release
 

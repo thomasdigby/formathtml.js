@@ -106,10 +106,10 @@ function formatHtml(htmlString, options) {
 
 	// helpers
 	function isOpeningTag(string) {
-		return string.substring(0, 4) === '&#60;';
+		return string.substring(0, 5) === '&#60;';
 	}
 	function isClosingTag(string) {
-		return string.substring(4, 10) === '&#47;';
+		return string.substring(5, 10) === '&#47;';
 	}
 	function isSelfClosingTag(string) {
 
@@ -132,7 +132,7 @@ function formatHtml(htmlString, options) {
 		return isSelfClosing;
 	}
 	function isComment(string) {
-		return string.substring(0, 7) === '&#60;!--';
+		return string.substring(0, 8) === '&#60;!--';
 	}
 	function getCustomParams(options) {
 		// for each custom attribute, overwrite default
